@@ -1,0 +1,35 @@
+PHARMIS — installation sur iPhone (et Android) en 10 minutes, gratuitement
+==========================================================================
+
+Contenu du dossier : index.html (l'application), manifest.webmanifest, sw.js
+(fonctionnement hors ligne), icônes.
+
+1. Créer un compte sur https://github.com (gratuit) si besoin.
+2. Nouveau dépôt : bouton "+" > "New repository". Nom : pharmis. Cocher "Public"
+   (obligatoire pour GitHub Pages gratuit ; le lien reste inconnu tant que vous ne
+   le diffusez pas). "Create repository".
+3. "uploading an existing file" (ou "Add file > Upload files") : glisser les 7 fichiers
+   de ce dossier, puis "Commit changes".
+4. Onglet "Settings" > menu "Pages" > Source : "Deploy from a branch", Branch : main,
+   dossier "/ (root)" > Save. Après 1 à 2 minutes l'adresse apparaît :
+   https://VOTRE-NOM.github.io/pharmis/
+5. Sur l'iPhone : ouvrir cette adresse dans Safari, bouton Partager (carré avec flèche)
+   > "Sur l'écran d'accueil" > Ajouter. L'icône PHARMIS s'ouvre ensuite en plein écran,
+   sans barre d'adresse, et fonctionne hors ligne (avion, sous-sol...).
+
+Vos favoris, notes, monographies modifiées et imports sont enregistrés automatiquement
+sur le téléphone (stockage Safari de l'application). Pour les transférer sur un autre
+appareil : Données > "Exporter mes données" (iCloud Drive) puis "Importer".
+
+Mettre à jour l'application (nouveaux prix, nouvelles monographies) :
+- remplacer index.html dans le dépôt GitHub (Add file > Upload files, même nom) ;
+- dans sw.js, changer "pharmis-v1" en "pharmis-v2" (puis v3...) ;
+- sur le téléphone, ouvrir l'application deux fois : la nouvelle version est téléchargée.
+Les prix peuvent aussi être mis à jour depuis l'application (Données > Mettre à jour les
+prix) avec le fichier js/latest.json de https://github.com/ballouchi/medoc.
+
+Alternative sans GitHub : https://app.netlify.com/drop (compte gratuit) — glisser le
+dossier entier, une adresse est créée immédiatement.
+
+Rappel : loi 73-55 art. 40 — information réservée aux professionnels de santé ; ne pas
+diffuser l'adresse au public.
