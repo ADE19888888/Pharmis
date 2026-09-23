@@ -31,5 +31,16 @@ prix) avec le fichier js/latest.json de https://github.com/ballouchi/medoc.
 Alternative sans GitHub : https://app.netlify.com/drop (compte gratuit) — glisser le
 dossier entier, une adresse est créée immédiatement.
 
+Nouveautés de la version 4
+- Onglet « Outils » : clairance de la créatinine (Cockcroft-Gault), DFG CKD-EPI 2021 et
+  stade KDIGO, équivalences des corticoïdes, dose pondérale, débit de perfusion,
+  IMC / surface corporelle (Mosteller) / poids idéal. La clairance peut être transmise
+  à l'analyse d'ordonnance (terrain « Insuffisance rénale »).
+- Analyse d'ordonnance : détection des redondances (même principe actif dans plusieurs
+  spécialités, même classe pharmacologique), partage et impression du compte rendu.
+- Recherche : liste des fiches consultées récemment.
+- Données > Apparence : thème clair, sombre ou automatique.
+- Le fichier PHARMIS.apk n'a pas été régénéré : il contient encore la version précédente.
+
 Rappel : loi 73-55 art. 40 — information réservée aux professionnels de santé ; ne pas
 diffuser l'adresse au public.
