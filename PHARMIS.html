@@ -23,7 +23,21 @@
   --danger:#B42318;--r:6px;--r-lg:12px;
   --font:"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif;
   --shadow:0 8px 24px rgba(27,42,51,.14);
+  --field:#FFFFFF;--on-ink:#FFFFFF;--sel-bg:#FFF9E8;--ci-bg:#FDECEA;--warn-bg:#FFF6E5;--dan-line:#F1C4BF;--cat-x:#B9C4C9;
+  color-scheme:light;
 }
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --ink:#E4ECEF;--ink-2:#B3C1C7;--ink-3:#8797A0;--line:#2E3E47;--line-2:#23313A;
+  --canvas:#0F181D;--surface:#162229;--surface-2:#1C2A32;
+  --accent:#2BA89C;--accent-ink:#5FD0C3;--accent-soft:#16403C;
+  --field:#0F181D;--on-ink:#0F181D;--sel-bg:#3A3217;--ci-bg:#3B1D1B;--warn-bg:#382B14;--dan-line:#6B2C27;--cat-x:#56656D;
+  --shadow:0 8px 24px rgba(0,0,0,.5);color-scheme:dark}}
+:root[data-theme="dark"]{
+  --ink:#E4ECEF;--ink-2:#B3C1C7;--ink-3:#8797A0;--line:#2E3E47;--line-2:#23313A;
+  --canvas:#0F181D;--surface:#162229;--surface-2:#1C2A32;
+  --accent:#2BA89C;--accent-ink:#5FD0C3;--accent-soft:#16403C;
+  --field:#0F181D;--on-ink:#0F181D;--sel-bg:#3A3217;--ci-bg:#3B1D1B;--warn-bg:#382B14;--dan-line:#6B2C27;--cat-x:#56656D;
+  --shadow:0 8px 24px rgba(0,0,0,.5);color-scheme:dark}
 *{box-sizing:border-box}
 html,body{margin:0;height:100%;-webkit-tap-highlight-color:transparent;overscroll-behavior:none;background:var(--canvas);color:var(--ink);font-family:var(--font);font-size:15px;line-height:1.45;-webkit-text-size-adjust:100%}
 button,input,select,textarea{font:inherit;color:inherit}
@@ -48,7 +62,7 @@ header.top{background:var(--surface);border-bottom:1px solid var(--line);padding
 .brand .dirty.on,.brand .dirty.ok{display:inline}
 .brand .dirty.ok{color:var(--V)}
 .search{display:flex;align-items:center;gap:8px;background:var(--surface-2);border:1.5px solid var(--line);border-radius:999px;padding:6px 10px 6px 12px}
-.search:focus-within{border-color:var(--accent);background:#fff}
+.search:focus-within{border-color:var(--accent);background:var(--field)}
 .search svg{flex:none;width:18px;height:18px;color:var(--ink-3)}
 .search input::-webkit-search-cancel-button,.search input::-webkit-search-decoration{-webkit-appearance:none;display:none}
 .search input{flex:1;border:0;background:transparent;outline:0;font-size:16px;min-width:0}
@@ -57,7 +71,7 @@ header.top{background:var(--surface);border-bottom:1px solid var(--line);padding
 .chips{display:flex;gap:6px;margin-top:8px;overflow-x:auto;scrollbar-width:none;padding-bottom:2px}
 .chips::-webkit-scrollbar{display:none}
 .chip{flex:none;border:1px solid var(--line);border-radius:999px;padding:4px 11px;font-size:13px;color:var(--ink-2);background:var(--surface)}
-.chip.on{background:var(--ink);color:#fff;border-color:var(--ink)}
+.chip.on{background:var(--ink);color:var(--on-ink);border-color:var(--ink)}
 .chip .dot{display:inline-block;width:8px;height:8px;border-radius:50%;margin-right:5px;vertical-align:1px}
 
 main{overflow:auto;-webkit-overflow-scrolling:touch;position:relative}
@@ -80,7 +94,7 @@ nav.tabs button .b{position:absolute;margin-left:22px;margin-top:-2px;background
 .row{display:grid;grid-template-columns:34px 1fr auto;gap:10px;align-items:center;padding:9px 14px 9px 12px;background:var(--surface);border-top:1px solid var(--line-2);text-align:left;width:100%}
 .row:active{background:var(--surface-2)}
 .row .cat{width:30px;height:30px;border-radius:7px;display:flex;align-items:center;justify-content:center;color:#fff;font-weight:700;font-size:14px}
-.cat.V{background:var(--V)}.cat.E{background:var(--E)}.cat.I{background:var(--I)}.cat.C{background:var(--C)}.cat.X{background:#B9C4C9}
+.cat.V{background:var(--V)}.cat.E{background:var(--E)}.cat.I{background:var(--I)}.cat.C{background:var(--C)}.cat.X{background:var(--cat-x)}
 .row .t{min-width:0}
 .row .t b{display:block;font-size:15px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 .row .t b .labi{font-style:normal;font-weight:400;color:var(--accent-ink);font-size:12px;margin-left:6px}
@@ -123,7 +137,7 @@ nav.tabs button .b{position:absolute;margin-left:22px;margin-top:-2px;background
 .pt .ph{display:flex;align-items:baseline;justify-content:space-between;gap:10px;flex-wrap:wrap;padding:8px 12px;background:var(--surface-2);border-bottom:1px solid var(--line);font-size:13px}
 .pt .ph b{font-size:14px}
 .pr{display:grid;grid-template-columns:1fr auto;gap:2px 10px;padding:9px 12px;border-top:1px solid var(--line-2);position:relative}
-.pr.sel{background:#FFF9E8}
+.pr.sel{background:var(--sel-bg)}
 .pr .n{grid-column:1;font-weight:600;font-size:14.5px}
 .pr .n .lab{color:var(--accent-ink);font-weight:400;font-size:12px;margin-left:6px}
 .pr .n .lab.ask{color:var(--I);border:1px dashed var(--I);border-radius:4px;padding:0 5px}
@@ -146,19 +160,20 @@ nav.tabs button .b{position:absolute;margin-left:22px;margin-top:-2px;background
 .mono h3{font-size:13px;color:var(--accent-ink);margin:16px 0 4px;letter-spacing:.2px}
 .mono h3:first-child{margin-top:4px}
 .mono p{margin:0;white-space:pre-wrap}
-.mono .ci{background:#FDECEA;border-left:3px solid var(--CI);padding:8px 10px;border-radius:0 var(--r) var(--r) 0}
-.mono .warn{background:#FFF6E5;border-left:3px solid var(--PE);padding:8px 10px;border-radius:0 var(--r) var(--r) 0}
+.mono .ci{background:var(--ci-bg);border-left:3px solid var(--CI);padding:8px 10px;border-radius:0 var(--r) var(--r) 0}
+.mono .warn{background:var(--warn-bg);border-left:3px solid var(--PE);padding:8px 10px;border-radius:0 var(--r) var(--r) 0}
 .mono .comp{border:1px solid var(--line);border-radius:var(--r-lg);padding:10px 12px;margin-bottom:12px}
 .mono .comp>b{display:block;font-size:15px;margin-bottom:2px}
 .mono .comp>span{display:block;color:var(--ink-3);font-size:12.5px;margin-bottom:4px}
 .note{color:var(--ink-3);font-size:12px;margin-top:18px;border-top:1px solid var(--line);padding-top:8px}
 .calc{background:var(--surface-2);border:1px solid var(--line);border-radius:var(--r-lg);padding:10px 12px;margin:8px 0 4px}
 .calc .in{display:flex;align-items:center;gap:8px;margin-bottom:8px}
-.calc input{width:84px;padding:6px 8px;font-size:16px;border:1px solid var(--line);border-radius:var(--r);background:#fff;text-align:right}
+.calc input{width:84px;padding:6px 8px;font-size:16px;border:1px solid var(--line);border-radius:var(--r);background:var(--field);text-align:right}
 .calc table{width:100%;border-collapse:collapse;font-size:13px}
 .calc td{padding:4px 0;border-top:1px solid var(--line-2)}
 .calc td:last-child{text-align:right;font-weight:600;white-space:nowrap}
 .calc .hint{font-size:11.5px;color:var(--ink-3);margin-top:6px}
+.calc td[colspan]{white-space:normal;text-align:left;font-weight:400}
 
 /* Interactions */
 .lv{display:inline-block;min-width:34px;text-align:center;color:#fff;border-radius:4px;font-size:11.5px;font-weight:700;padding:2px 6px;letter-spacing:.3px}
@@ -194,23 +209,49 @@ nav.tabs button .b{position:absolute;margin-left:22px;margin-top:-2px;background
 .terrain{display:flex;flex-wrap:wrap;gap:6px;margin:8px 0 14px}
 .btn{display:inline-flex;align-items:center;justify-content:center;gap:6px;border-radius:var(--r);padding:9px 14px;font-weight:600;font-size:14px;background:var(--accent);color:#fff}
 .btn.sec{background:var(--surface);color:var(--ink);border:1px solid var(--line)}
-.btn.dan{background:#fff;color:var(--danger);border:1px solid #F1C4BF}
+.btn.dan{background:var(--surface);color:var(--danger);border:1px solid var(--dan-line)}
 .btn:disabled{opacity:.5}
 .btn svg{width:18px;height:18px}
 .btnrow{display:flex;gap:8px;flex-wrap:wrap;margin:8px 0}
 .field{margin:10px 0}
 .field label{display:block;font-size:12.5px;color:var(--ink-2);margin-bottom:4px}
-.field input,.field textarea,.field select{width:100%;padding:8px 10px;font-size:16px;border:1px solid var(--line);border-radius:var(--r);background:#fff}
+.field input,.field textarea,.field select{width:100%;padding:8px 10px;font-size:16px;border:1px solid var(--line);border-radius:var(--r);background:var(--field)}
 .field textarea{min-height:80px;resize:vertical}
 .card{background:var(--surface);border:1px solid var(--line);border-radius:var(--r-lg);padding:12px 14px;margin-bottom:12px}
 .card h3{margin:0 0 6px;font-size:15px}
 .card p{margin:4px 0;font-size:13.5px;color:var(--ink-2)}
 .kv{display:grid;grid-template-columns:auto 1fr;gap:4px 12px;font-size:13.5px}
 .kv b{color:var(--ink-2);font-weight:500}
-.toast{position:fixed;left:50%;bottom:76px;transform:translateX(-50%);background:var(--ink);color:#fff;padding:9px 16px;border-radius:999px;font-size:13.5px;z-index:50;box-shadow:var(--shadow);opacity:0;transition:opacity .2s;pointer-events:none;max-width:92vw;text-align:center}
+.toast{position:fixed;left:50%;bottom:76px;transform:translateX(-50%);background:var(--ink);color:var(--on-ink);padding:9px 16px;border-radius:999px;font-size:13.5px;z-index:50;box-shadow:var(--shadow);opacity:0;transition:opacity .2s;pointer-events:none;max-width:92vw;text-align:center}
 .toast.on{opacity:1}
 .fav-empty{padding:30px 20px;text-align:center;color:var(--ink-2)}
 .pill{display:inline-block;font-size:11.5px;border:1px solid var(--line);border-radius:999px;padding:1px 8px;color:var(--ink-2);margin-left:6px;vertical-align:middle}
+
+/* Outils, récents, redondances */
+.tools .card h3{display:flex;align-items:baseline;gap:2px 8px;flex-wrap:wrap}
+.tools .card h3 small{font-weight:400;color:var(--ink-3);font-size:12px}
+.fgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(130px,1fr));gap:8px 10px;margin:6px 0 4px}
+.fgrid .field{margin:0}
+.fgrid .field input,.fgrid .field select{padding:7px 9px}
+.res{width:100%;border-collapse:collapse;font-size:13.5px;margin-top:8px}
+.res td{padding:5px 0;border-top:1px solid var(--line-2);vertical-align:top}
+.res td:last-child{text-align:right;font-weight:600;white-space:nowrap;padding-left:10px}
+.res td small{display:block;font-weight:400;color:var(--ink-3);font-size:11.5px;white-space:normal}
+.res tr.hl td{color:var(--accent-ink)}
+.src{font-size:11.5px;color:var(--ink-3);margin-top:8px;line-height:1.5}
+.src a{color:var(--ink-3)}
+.recent{margin:4px auto 0;max-width:640px;text-align:left}
+.recent h4{font-size:12.5px;color:var(--ink-3);font-weight:600;margin:18px 14px 6px;display:flex;justify-content:space-between;text-transform:uppercase;letter-spacing:.4px}
+.recent h4 button{color:var(--accent-ink);font-size:12px;text-transform:none;letter-spacing:0;font-weight:500}
+.recent .list{margin:0 12px}
+.recent .row{border-top:1px solid var(--line-2)}
+.recent .row:first-child{border-top:0}
+.dup{border-left:3px solid var(--AD);padding:8px 10px;margin:8px 0;background:var(--surface-2);border-radius:0 var(--r) var(--r) 0;font-size:13.5px}
+.dup b{display:block;font-size:14px;margin-bottom:2px}
+.renal{font-size:13px;color:var(--ink-2);background:var(--accent-soft);border-radius:var(--r);padding:6px 10px;margin:6px 0}
+.seg{display:inline-flex;border:1px solid var(--line);border-radius:999px;overflow:hidden}
+.seg button{padding:6px 14px;font-size:13.5px;color:var(--ink-2)}
+.seg button.on{background:var(--accent);color:#fff}
 
 /* Desktop */
 @media (min-width:900px){
@@ -232,6 +273,8 @@ nav.tabs button .b{position:absolute;margin-left:22px;margin-top:-2px;background
   .pane{display:block!important;page-break-inside:avoid}
   main{display:none}
   body{background:#fff}
+  body.print-rx main{display:block}
+  body.print-rx .view:not(#view-rx),body.print-rx #rx-q,body.print-rx .btnrow,body.print-rx .terrain,body.print-rx .x{display:none!important}
 }
 
 </style>
@@ -252,13 +295,15 @@ nav.tabs button .b{position:absolute;margin-left:22px;margin-top:-2px;background
     <div class="terrain" id="terrain"><span style="font-size:13px;color:var(--ink-2);align-self:center">Terrain :</span><button class="chip" data-t="gr">Grossesse / allaitement</button><button class="chip" data-t="ir">Insuffisance rénale</button><button class="chip" data-t="age">Sujet âgé</button><button class="chip" data-t="enf">Enfant</button></div>
     <div id="rx-out"></div></div></div>
   <div class="view" id="view-fav"><div class="wrap" style="padding:8px 0 40px"><h2 style="padding:0 14px">Favoris</h2><div id="fav-list"></div></div></div>
+  <div class="view" id="view-tools"><div class="wrap tools"><h2>Outils cliniques</h2><p class="lead">Calculateurs d'aide à la prescription. Résultats indicatifs : à confronter au contexte clinique et au RCP.</p><div id="tools"></div></div></div>
   <div class="view" id="view-settings"><div class="wrap"><h2>Données et réglages</h2><div id="settings"></div></div></div>
 </main>
 <nav class="tabs">
   <button data-view="search" class="on"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>Recherche</button>
   <button data-view="rx"><span class="b" id="rx-badge" style="display:none">0</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 3h6l1 4H8z"/><path d="M6 7h12l-1 14H7z"/><path d="M9.5 13h5M12 10.5v5"/></svg>Interactions</button>
   <button data-view="fav"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"><path d="m12 3 2.7 5.6 6.1.9-4.4 4.3 1 6.1L12 17l-5.4 2.9 1-6.1L3.2 9.5l6.1-.9z"/></svg>Favoris</button>
-  <button data-view="settings"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M4 6h16M4 12h16M4 18h16"/><circle cx="9" cy="6" r="2" fill="#fff"/><circle cx="15" cy="12" r="2" fill="#fff"/><circle cx="8" cy="18" r="2" fill="#fff"/></svg>Données</button>
+  <button data-view="tools"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="3" width="14" height="18" rx="2"/><path d="M8 7h8M8.5 12h.01M12 12h.01M15.5 12h.01M8.5 15.5h.01M12 15.5h.01M15.5 15.5h.01M8.5 19h.01M12 19h3.5"/></svg>Outils</button>
+  <button data-view="settings"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M4 6h16M4 12h16M4 18h16"/><circle cx="9" cy="6" r="2" style="fill:var(--surface)"/><circle cx="15" cy="12" r="2" style="fill:var(--surface)"/><circle cx="8" cy="18" r="2" style="fill:var(--surface)"/></svg>Données</button>
 </nav>
 <section class="sheet" id="sheet" aria-modal="true">
   <div class="sh"><button class="back" id="sh-back" aria-label="Retour"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m15 5-7 7 7 7"/></svg></button><div class="ttl"><b id="sh-title"></b><span id="sh-sub"></span></div><button class="ic" id="sh-share" title="Partager la fiche" aria-label="Partager"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12M8 7l4-4 4 4"/><path d="M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2v-7"/></svg></button><button class="ic" id="sh-rx" title="Ajouter à l'analyse d'ordonnance" aria-label="Ajouter à l'ordonnance"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></button><button class="ic" id="sh-fav" title="Favori" aria-label="Favori"><svg viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"><path d="m12 3 2.7 5.6 6.1.9-4.4 4.3 1 6.1L12 17l-5.4 2.9 1-6.1L3.2 9.5l6.1-.9z"/></svg></button></div>
@@ -284,7 +329,7 @@ const IS_IOS = /iPhone|iPad|iPod/.test(navigator.userAgent) || (navigator.platfo
 const STANDALONE = window.matchMedia("(display-mode: standalone)").matches || navigator.standalone === true;
 const ANDROID = !!window.PharmisAndroid;
 const HOSTED = location.protocol.startsWith("http") || ANDROID;
-USER.labs = USER.labs || {}; USER.favs = USER.favs || []; USER.notes = USER.notes || {}; USER.mono = USER.mono || {}; USER.rx = USER.rx || []; USER.custom = USER.custom || []; USER.priceOverride = USER.priceOverride || null;
+USER.labs = USER.labs || {}; USER.favs = USER.favs || []; USER.notes = USER.notes || {}; USER.mono = USER.mono || {}; USER.rx = USER.rx || []; USER.custom = USER.custom || []; USER.priceOverride = USER.priceOverride || null; USER.recent = USER.recent || [];
 let DIRTY = false;
 const $ = (s, r = document) => r.querySelector(s);
 const $$ = (s, r = document) => Array.from(r.querySelectorAll(s));
@@ -297,6 +342,15 @@ const CATL = { V: "Vital — remboursé à 100 % du tarif de référence", E: "E
 const CATN = { V: "Vital 100 %", E: "Essentiel 85 %", I: "Intermédiaire 40 %", C: "Non remboursé", X: "?" };
 const LVL = { CI: "Contre-indication", AD: "Association déconseillée", PE: "Précaution d'emploi", APC: "À prendre en compte" };
 const LVLO = { CI: 0, AD: 1, PE: 2, APC: 3 };
+
+/* ---- Thème (auto / clair / sombre) ---- */
+function applyTheme() {
+  const t = USER.theme === "light" || USER.theme === "dark" ? USER.theme : "";
+  if (t) document.documentElement.setAttribute("data-theme", t); else document.documentElement.removeAttribute("data-theme");
+  const dark = t === "dark" || (!t && window.matchMedia("(prefers-color-scheme: dark)").matches);
+  const mc = document.querySelector('meta[name="theme-color"]'); if (mc) mc.setAttribute("content", dark ? "#162229" : "#0F766E");
+}
+applyTheme();
 
 /* ---- Construction de la base ---- */
 let MEDS = [];     // {n,f,d,pr,px,rb,dci,cat,tr,lab,key,s}
@@ -390,8 +444,11 @@ function renderResults() {
     const favs = USER.favs.filter(k => BYDCI[k]);
     box.innerHTML = `<div class="empty"><b>Cherchez un médicament</b>Nom commercial, DCI, classe ou indication — sans accent, en partie.
       <div class="ex">${["amoxicilline", "amlor", "hypertension", "ipp", "insuline", "antihistaminique"].map(x => `<button class="chip" data-ex="${x}">${x}</button>`).join("")}</div>
+      ${recentHtml()}
       <p style="margin-top:22px;font-size:12.5px">${DATA.meds.length.toLocaleString("fr")} présentations · ${Object.keys(BYDCI).length} DCI · ${Object.keys(DATA.mono).length} monographies · ${DATA.rules.length} règles d'interaction<br>${esc(DATA.meta.source)}</p></div>`;
     $$("[data-ex]", box).forEach(b => b.onclick = () => { $("#q").value = b.dataset.ex; shownLimit = 25; renderResults(); });
+    $$(".recent .row", box).forEach(b => b.onclick = () => openDci(b.dataset.key));
+    const rc = $("#recent-clear"); if (rc) rc.onclick = () => { USER.recent = []; markDirty(); renderResults(); };
     return;
   }
   const res = search(q); const toks = fold(q).trim().split(/\s+/).filter(Boolean);
@@ -415,6 +472,15 @@ function renderResults() {
   $$("[data-open]", box).forEach(b => b.onclick = () => openDci(b.dataset.open));
   const m = $("#moreres"); if (m) m.onclick = () => { shownLimit += 25; renderResults(); };
 }
+function dciRowHtml(k, extra) {
+  const g = BYDCI[k]; const c = g.rows[0].cat;
+  return `<button class="row" data-key="${esc(k)}"><span class="cat ${c}">${c === "X" ? "?" : c}</span><span class="t"><b>${esc(g.dci)}</b><span>${esc(g.cls || "")} · ${g.rows.length} présentation${g.rows.length > 1 ? "s" : ""}${extra || ""}</span></span><span class="p num"><b>${fmtPx(g.minPx === 1e9 ? null : g.minPx)}</b><small>dès</small></span></button>`;
+}
+function recentHtml() {
+  const keys = USER.recent.filter(k => BYDCI[k]).slice(0, 8);
+  if (!keys.length) return "";
+  return `<div class="recent"><h4>Consultés récemment<button id="recent-clear">Effacer</button></h4><div class="list">${keys.map(k => dciRowHtml(k)).join("")}</div></div>`;
+}
 function rowHtml(r) {
   const pct = r.tr && r.px ? Math.min(100, Math.round(100 * (r.rb || 0) / r.px)) : null;
   return `<button class="row" data-key="${esc(r.key)}" data-i="${esc(r.n + "|" + r.d + "|" + r.pr)}">
@@ -428,6 +494,7 @@ let CUR = null, curSel = null;
 function openDci(key, sel) {
   const g = BYDCI[key]; if (!g) return;
   CUR = g; curSel = sel || null;
+  USER.recent = [key].concat(USER.recent.filter(k => k !== key)).slice(0, 20); markDirty();
   $("#sh-title").textContent = g.dci;
   $("#sh-sub").textContent = g.cls || (g.ind ? g.ind.slice(0, 80) : "");
   $("#sh-fav").classList.toggle("on", USER.favs.includes(key));
@@ -615,6 +682,11 @@ function renderRx() {
     const ix = pairIx(keys[i], keys[j]); for (const x of ix) { found.push({ a: keys[i], b: keys[j], ...x }); counts[x.lv]++; }
   }
   found.sort((x, y) => LVLO[x.lv] - LVLO[y.lv]);
+  const dups = rxDuplicates(keys);
+  if (dups.length) {
+    html += `<h2 style="font-size:16px;margin:16px 0 4px">Redondances (${dups.length})</h2>`;
+    html += dups.map(d => `<div class="dup"><b>${esc(d.title)}</b>${esc(d.keys.map(k => BYDCI[k] ? BYDCI[k].dci : k).join(" · "))}<p style="margin:4px 0 0;color:var(--ink-2)">${esc(d.msg)}</p></div>`).join("");
+  }
   if (keys.length >= 2) {
     html += `<h2 style="font-size:16px;margin:16px 0 4px">Interactions (${found.length})</h2>`;
     if (!found.length) html += `<p class="lead">Aucune interaction de classe détectée entre ces ${keys.length} médicaments. Cela ne dispense pas de la lecture des RCP pour les interactions spécifiques à une molécule.</p>`;
@@ -630,6 +702,7 @@ function renderRx() {
   // terrain
   if (terrain.size) {
     html += `<h2 style="font-size:16px;margin:18px 0 4px">Terrain</h2>`;
+    if (terrain.has("ir")) html += USER.renal ? `<div class="renal">Fonction rénale du patient (${esc(USER.renal.date)}) : <b>ClCr Cockcroft-Gault ${USER.renal.cg} mL/min</b>${USER.renal.dfg ? ` · DFG CKD-EPI ${USER.renal.dfg} mL/min/1,73 m² (${esc(USER.renal.stade)})` : ""}.</div>` : `<div class="renal">Calculez la clairance dans l'onglet <b>Outils</b> pour l'afficher ici.</div>`;
     for (const k of keys) {
       const g = BYDCI[k]; const m = g && (getMono(k) || (monoParts(k)[0] || {}).mono);
       if (!m) continue;
@@ -642,7 +715,27 @@ function renderRx() {
     }
   }
   if (keys.length < 2) html += `<p class="lead" style="margin-top:12px">Ajoutez au moins deux médicaments pour l'analyse des interactions.</p>`;
+  else html += `<div class="btnrow" style="margin-top:14px"><button class="btn sec" id="rx-share">Partager l'analyse</button><button class="btn sec" id="rx-print">Imprimer</button></div>`;
   out.innerHTML = html;
+  const sh = $("#rx-share"); if (sh) sh.onclick = () => shareText("Analyse d'ordonnance", rxReport(keys, found, dups));
+  const pr = $("#rx-print"); if (pr) pr.onclick = () => { document.body.classList.add("print-rx"); window.print(); setTimeout(() => document.body.classList.remove("print-rx"), 500); };
+}
+function rxDuplicates(keys) {
+  const out = []; const byComp = {};
+  for (const k of keys) for (const c of new Set(comps(k))) (byComp[c] = byComp[c] || []).push(k);
+  for (const c in byComp) if (byComp[c].length > 1) out.push({ title: "Même principe actif : " + c, keys: byComp[c], msg: "Présent dans plusieurs médicaments de l'ordonnance : risque de surdosage (ex. paracétamol dans une association). Vérifier la dose totale journalière." });
+  const byCls = {};
+  for (const k of keys) { const m = getMono(k); const cl = m && m.cls ? m.cls.trim() : ""; if (cl) (byCls[cl] = byCls[cl] || []).push(k); }
+  for (const cl in byCls) { const ks = byCls[cl]; if (ks.length > 1 && !out.some(o => ks.every(k => o.keys.includes(k)))) out.push({ title: "Même classe : " + cl, keys: ks, msg: "Deux molécules de la même classe pharmacologique : association généralement redondante, à justifier (cumul d'effets indésirables)." }); }
+  return out;
+}
+function rxReport(keys, found, dups) {
+  const nm = k => BYDCI[k] ? BYDCI[k].dci : k;
+  let t = `Analyse d'ordonnance — ${new Date().toLocaleDateString("fr")}\nMédicaments : ${keys.map(nm).join(", ")}\n`;
+  if (dups.length) t += `\nRedondances :\n` + dups.map(d => `• ${d.title} (${d.keys.map(nm).join(", ")})`).join("\n") + "\n";
+  t += `\nInteractions (${found.length}) :\n` + (found.length ? found.map(f => `• [${f.lv}] ${nm(f.a)} + ${nm(f.b)} : ${f.eff}\n  Conduite : ${f.cd}`).join("\n") : "aucune interaction de classe détectée");
+  if (terrain.has("ir") && USER.renal) t += `\n\nFonction rénale : ClCr ${USER.renal.cg} mL/min (Cockcroft-Gault)`;
+  return t + `\n\n${APP_NAME} — aide-mémoire, ne remplace pas le RCP.`;
 }
 function extractSent(txt, re) { const m = re.exec(txt || ""); if (!m) return ""; const s = txt; let a = s.lastIndexOf(". ", m.index); a = a < 0 ? 0 : a + 2; let b = s.indexOf(". ", m.index); b = b < 0 ? s.length : b + 1; return s.slice(a, b).trim(); }
 function rxSuggest(q) {
@@ -660,12 +753,86 @@ function parseRxText(t) {
   return n;
 }
 
+/* ===================== Outils cliniques ===================== */
+const CORTICO = [["Hydrocortisone", 20], ["Cortisone", 25], ["Prednisone", 5], ["Prednisolone", 5], ["Méthylprednisolone", 4], ["Triamcinolone", 4], ["Dexaméthasone", 0.75], ["Bétaméthasone", 0.75]];
+const nf = (v, d = 1) => v == null || !isFinite(v) ? "—" : (Math.round(v * 10 ** d) / 10 ** d).toLocaleString("fr");
+const num = id => { const v = parseFloat(String(($("#" + id) || {}).value || "").replace(",", ".")); return isFinite(v) && v > 0 ? v : null; };
+function kdigo(g) { return g >= 90 ? "G1" : g >= 60 ? "G2" : g >= 45 ? "G3a" : g >= 30 ? "G3b" : g >= 15 ? "G4" : "G5"; }
+function renderTools() {
+  const box = $("#tools"); if (box.dataset.built) return; box.dataset.built = "1";
+  const T = USER.tools || {};
+  const f = (id, label, attrs) => `<div class="field"><label for="${id}">${label}</label><input id="${id}" type="number" inputmode="decimal" step="any" min="0" ${attrs || ""} value="${esc(T[id] || "")}"></div>`;
+  box.innerHTML = `
+  <div class="card"><h3>Fonction rénale <small>Cockcroft-Gault · CKD-EPI 2021</small></h3>
+    <div class="fgrid">${f("t-age", "Âge (ans)")}<div class="field"><label for="t-sex">Sexe</label><select id="t-sex"><option value="H">Homme</option><option value="F"${T["t-sex"] === "F" ? " selected" : ""}>Femme</option></select></div>${f("t-kg", "Poids (kg)")}${f("t-cm", "Taille (cm)")}${f("t-cr", "Créatininémie")}<div class="field"><label for="t-cru">Unité</label><select id="t-cru">${[["umol", "µmol/L"], ["mgl", "mg/L"], ["mgdl", "mg/dL"]].map(([v, l]) => `<option value="${v}"${T["t-cru"] === v ? " selected" : ""}>${l}</option>`).join("")}</select></div></div>
+    <table class="res" id="t-renal"></table>
+    <div class="btnrow"><button class="btn sec" id="t-use">Utiliser pour l'analyse d'ordonnance</button></div>
+    <p class="src">Cockcroft-Gault : ClCr = (140 − âge) × poids × k / créatinine (µmol/L), k = 1,23 (homme) ou 1,04 (femme) — poids réel ; surestime la clairance chez l'obèse, peu fiable si créatinine instable. Référence historique des adaptations posologiques des RCP. — CKD-EPI 2021 sans coefficient ethnique (Inker et al., <a href="https://www.nejm.org/doi/full/10.1056/NEJMoa2102953" target="_blank" rel="noopener">N Engl J Med 2021;385:1737-49</a>). Stades : <a href="https://kdigo.org/guidelines/ckd-evaluation-and-management/" target="_blank" rel="noopener">KDIGO 2024</a>.</p></div>
+  <div class="card"><h3>Équivalences des corticoïdes <small>activité anti-inflammatoire</small></h3>
+    <div class="fgrid"><div class="field"><label for="t-cs">Corticoïde</label><select id="t-cs">${CORTICO.map(([n], i) => `<option value="${i}"${String(T["t-cs"] ?? 2) === String(i) ? " selected" : ""}>${n}</option>`).join("")}</select></div>${f("t-csd", "Dose (mg)")}</div>
+    <table class="res" id="t-cortico"></table>
+    <p class="src">Doses équivalentes pour l'effet glucocorticoïde (prednisone 5 mg ≈ hydrocortisone 20 mg ≈ dexaméthasone 0,75 mg), d'après le <a href="https://bnf.nice.org.uk/treatment-summaries/glucocorticoid-therapy/" target="_blank" rel="noopener">BNF — Glucocorticoid therapy</a>. Ne tient pas compte de l'activité minéralocorticoïde ni de la durée d'action (dexaméthasone et bétaméthasone : action prolongée).</p></div>
+  <div class="card"><h3>Dose pondérale</h3>
+    <div class="fgrid">${f("t-pw", "Poids (kg)")}${f("t-pd", "Dose (mg/kg/prise)")}${f("t-pc", "Concentration (mg/mL)")}${f("t-pmax", "Dose max/prise (mg)")}</div>
+    <table class="res" id="t-pond"></table>
+    <p class="src">Vérifier la dose unitaire et la dose maximale journalière dans la monographie de la DCI (onglet Monographie de la fiche).</p></div>
+  <div class="card"><h3>Débit de perfusion</h3>
+    <div class="fgrid">${f("t-iv", "Volume (mL)")}${f("t-ih", "Durée (h)")}${f("t-im", "+ minutes")}<div class="field"><label for="t-ig">Perfuseur</label><select id="t-ig"><option value="20">Standard 20 gttes/mL</option><option value="60"${T["t-ig"] === "60" ? " selected" : ""}>Micro 60 gttes/mL</option></select></div></div>
+    <table class="res" id="t-perf"></table>
+    <p class="src">Débit (gouttes/min) = volume (mL) × facteur de goutte / durée (min). Perfuseur standard : 20 gouttes = 1 mL ; microperfuseur : 60 microgouttes = 1 mL.</p></div>
+  <div class="card"><h3>Morphologie</h3>
+    <div class="fgrid">${f("t-bw", "Poids (kg)")}${f("t-bh", "Taille (cm)")}</div>
+    <table class="res" id="t-morph"></table>
+    <p class="src">IMC = poids / taille² (classes <a href="https://www.who.int/data/gho/data/themes/topics/topic-details/GHO/body-mass-index" target="_blank" rel="noopener">OMS</a>). Surface corporelle : formule de Mosteller, √(taille cm × poids kg / 3600) (N Engl J Med 1987;317:1098). Poids idéal : formule de Devine.</p></div>`;
+  $$("input,select", box).forEach(el => el.oninput = el.onchange = () => { USER.tools = USER.tools || {}; USER.tools[el.id] = el.value; markDirty(); calcTools(); });
+  $("#t-use").onclick = () => {
+    const r = calcRenal(); if (!r) { toast("Renseignez âge, sexe, poids et créatininémie"); return; }
+    USER.renal = { cg: Math.round(r.cg), dfg: r.dfg ? Math.round(r.dfg) : null, stade: r.dfg ? kdigo(r.dfg) : "", date: new Date().toLocaleDateString("fr") };
+    markDirty(); terrain.add("ir"); $$("#terrain .chip").forEach(c => c.classList.toggle("on", terrain.has(c.dataset.t))); toast("Clairance transmise à l'analyse d'ordonnance (terrain « Insuffisance rénale »)");
+  };
+  calcTools();
+}
+function calcRenal() {
+  const age = num("t-age"), kg = num("t-kg"), cr = num("t-cr"), sex = $("#t-sex").value, u = $("#t-cru").value;
+  if (!age || !kg || !cr) return null;
+  const umol = u === "umol" ? cr : u === "mgl" ? cr * 8.84 : cr * 88.4, mgdl = umol / 88.4;
+  const cg = (140 - age) * kg * (sex === "F" ? 1.04 : 1.23) / umol;
+  let dfg = null;
+  if (age >= 18) { const k = sex === "F" ? 0.7 : 0.9, a = sex === "F" ? -0.241 : -0.302; dfg = 142 * Math.pow(Math.min(mgdl / k, 1), a) * Math.pow(Math.max(mgdl / k, 1), -1.2) * Math.pow(0.9938, age) * (sex === "F" ? 1.012 : 1); }
+  return { cg, dfg, umol, mgdl };
+}
+function calcTools() {
+  const row = (a, b, sub, hl) => `<tr${hl ? ' class="hl"' : ""}><td>${a}${sub ? `<small>${sub}</small>` : ""}</td><td>${b}</td></tr>`;
+  // rein
+  const r = calcRenal(); const age = num("t-age");
+  $("#t-renal").innerHTML = !r ? row("Renseigner âge, poids et créatininémie", "") :
+    row("Créatininémie", `${nf(r.umol, 0)} µmol/L · ${nf(r.mgdl, 2)} mg/dL`) +
+    row("Clairance Cockcroft-Gault", nf(r.cg, 0) + " mL/min", r.cg < 30 ? "< 30 mL/min : contre-indication ou adaptation fréquente (metformine, AOD, AINS…) — voir RCP" : "", true) +
+    (r.dfg ? row("DFG CKD-EPI 2021", nf(r.dfg, 0) + " mL/min/1,73 m²", "Stade KDIGO " + kdigo(r.dfg), true) : row("DFG CKD-EPI", "—", age && age < 18 ? "Non validé avant 18 ans (utiliser Schwartz)" : ""));
+  // corticoïdes
+  const i = +$("#t-cs").value, d = num("t-csd");
+  $("#t-cortico").innerHTML = !d ? row("Saisir une dose", "") : CORTICO.map(([n, eq], j) => row(n, nf(d / CORTICO[i][1] * eq, 2) + " mg", "", j === i)).join("");
+  // dose pondérale
+  const pw = num("t-pw"), pd = num("t-pd"), pc = num("t-pc"), pmax = num("t-pmax");
+  if (!pw || !pd) $("#t-pond").innerHTML = row("Saisir poids et dose", "");
+  else { let mg = pw * pd; const capped = pmax && mg > pmax; if (capped) mg = pmax; $("#t-pond").innerHTML = row("Dose par prise", nf(mg, 1) + " mg", capped ? "Plafonnée à la dose maximale saisie" : "", true) + (pc ? row("Volume par prise", nf(mg / pc, 2) + " mL") : ""); }
+  // perfusion
+  const v = num("t-iv"), min = (num("t-ih") || 0) * 60 + (num("t-im") || 0), gf = +$("#t-ig").value;
+  $("#t-perf").innerHTML = !v || !min ? row("Saisir volume et durée", "") : row("Débit", nf(v / min * 60, 1) + " mL/h", "", true) + row("Gouttes par minute", nf(v * gf / min, 0) + " gttes/min", gf === 20 ? "≈ 1 goutte toutes les " + nf(60 / (v * gf / min), 1) + " s" : "");
+  // morphologie
+  const bw = num("t-bw"), bh = num("t-bh");
+  if (!bw || !bh) $("#t-morph").innerHTML = row("Saisir poids et taille", "");
+  else { const imc = bw / Math.pow(bh / 100, 2); const cl = imc < 18.5 ? "Insuffisance pondérale" : imc < 25 ? "Corpulence normale" : imc < 30 ? "Surpoids" : imc < 35 ? "Obésité modérée (classe I)" : imc < 40 ? "Obésité sévère (classe II)" : "Obésité morbide (classe III)";
+    const pi = sx => (sx === "F" ? 45.5 : 50) + 2.3 * (bh / 2.54 - 60);
+    $("#t-morph").innerHTML = row("IMC", nf(imc, 1) + " kg/m²", cl, true) + row("Surface corporelle (Mosteller)", nf(Math.sqrt(bh * bw / 3600), 2) + " m²") + (bh >= 152 ? row("Poids idéal (Devine)", `H ${nf(pi("H"), 0)} kg · F ${nf(pi("F"), 0)} kg`) : ""); }
+}
+
 /* ===================== Favoris ===================== */
 function toggleFav() { if (!CUR) return; const k = CUR.key; const i = USER.favs.indexOf(k); if (i >= 0) USER.favs.splice(i, 1); else USER.favs.push(k); $("#sh-fav").classList.toggle("on", i < 0); markDirty(); renderFavs(); }
 function renderFavs() {
   const box = $("#fav-list"); const keys = USER.favs.filter(k => BYDCI[k]).sort((a, b) => BYDCI[a].dci.localeCompare(BYDCI[b].dci));
   if (!keys.length) { box.innerHTML = `<div class="fav-empty">Aucun favori. Touchez ★ dans une fiche pour l'ajouter ici.</div>`; return; }
-  box.innerHTML = keys.map(k => { const g = BYDCI[k]; return `<button class="row" data-key="${esc(k)}"><span class="cat ${g.rows[0].cat}">${g.rows[0].cat === "X" ? "?" : g.rows[0].cat}</span><span class="t"><b>${esc(g.dci)}</b><span>${esc(g.cls || "")} · ${g.rows.length} présentation${g.rows.length > 1 ? "s" : ""}${USER.notes[k] ? " · note" : ""}</span></span><span class="p num"><b>${fmtPx(g.minPx === 1e9 ? null : g.minPx)}</b><small>dès</small></span></button>`; }).join("");
+  box.innerHTML = keys.map(k => dciRowHtml(k, USER.notes[k] ? " · note" : "")).join("");
   $$(".row", box).forEach(b => b.onclick = () => openDci(b.dataset.key));
 }
 
@@ -704,7 +871,7 @@ async function exportUser() {
   if (navigator.share && navigator.canShare && navigator.canShare({ files: [file] })) { try { await navigator.share({ files: [file], title: "PHARMIS — mes données" }); return; } catch (e) { if (e.name === "AbortError") return; } }
   const a = document.createElement("a"); a.href = URL.createObjectURL(blob); a.download = file.name; document.body.appendChild(a); a.click(); a.remove();
 }
-function importUser(file) { const r = new FileReader(); r.onload = () => { try { const u = JSON.parse(r.result); if (!u || typeof u !== "object") throw 0; USER = Object.assign(USER, u); USER.favs = USER.favs || []; USER.notes = USER.notes || {}; USER.mono = USER.mono || {}; USER.rx = USER.rx || []; USER.custom = USER.custom || []; markDirty(); buildIndex(); renderAll(); toast("Données importées"); } catch (e) { toast("Fichier invalide"); } }; r.readAsText(file); }
+function importUser(file) { const r = new FileReader(); r.onload = () => { try { const u = JSON.parse(r.result); if (!u || typeof u !== "object") throw 0; USER = Object.assign(USER, u); USER.favs = USER.favs || []; USER.notes = USER.notes || {}; USER.mono = USER.mono || {}; USER.rx = USER.rx || []; USER.custom = USER.custom || []; USER.recent = USER.recent || []; USER.labs = USER.labs || {}; applyTheme(); markDirty(); buildIndex(); renderAll(); toast("Données importées"); } catch (e) { toast("Fichier invalide"); } }; r.readAsText(file); }
 function importPrices(file) {
   const r = new FileReader(); r.onload = () => {
     try {
@@ -743,20 +910,22 @@ function renderSettings() {
     <div class="btnrow" style="margin-top:10px"><label class="btn sec">Mettre à jour les prix (JSON)<input type="file" accept=".json" class="sr" id="imp-json"></label><label class="btn sec">Importer une liste CSV (DPM / CNAM)<input type="file" accept=".csv,.tsv,.txt" class="sr" id="imp-csv"></label>${USER.priceOverride || USER.custom.length ? `<button class="btn dan" id="reset-px">Revenir à la base d'origine</button>` : ""}</div>
     <p style="font-size:12px">JSON : fichier <code>latest.json</code> publié sur <a href="https://github.com/ballouchi/medoc/tree/main/js" target="_blank" rel="noopener">github.com/ballouchi/medoc</a> (mis à jour à chaque circulaire PCT/CNAM). CSV : exportez la liste Excel de la DPM ou de la CNAM en CSV ; les colonnes sont reconnues par leur en-tête (Nom, Forme, Dosage, Présentation, Prix, Remboursement, DCI, Catégorie, Laboratoire).</p></div>
   <div class="card"><h3>Sources et limites</h3><p>Prix et catégories CNAM : listes officielles CNAM (médicaments remboursés VEI), circulaires de la Pharmacie Centrale de Tunisie et liste des AMM de la DPM, compilées par le projet ouvert « Prix des médicaments en Tunisie » (licence Apache-2.0).</p><p>Monographies : synthèses rédigées d'après les RCP (Vidal, BNF, EMA), les recommandations des sociétés savantes et le Thésaurus des interactions de l'ANSM. Elles constituent un aide-mémoire pour le médecin prescripteur et ne remplacent pas le RCP de chaque spécialité tunisienne ni le jugement clinique.</p><p>Loi tunisienne n° 73-55 (art. 40) : l'information sur les médicaments est réservée aux professionnels de santé — ne pas diffuser ce fichier au public.</p></div>
+  <div class="card"><h3>Apparence</h3><p>Thème de l'application (« Auto » suit le réglage du téléphone).</p><div class="seg" id="theme-seg">${[["", "Auto"], ["light", "Clair"], ["dark", "Sombre"]].map(([v, l]) => `<button data-theme="${v}" class="${(USER.theme || "") === v ? "on" : ""}">${l}</button>`).join("")}</div></div>
   <div class="card"><h3>Raccourcis</h3><p><b>/</b> : recherche · <b>Échap</b> : fermer la fiche · <b>Ctrl+S</b> : enregistrer · <b>Ctrl+P</b> (fiche ouverte) : imprimer la monographie.</p></div>
   <div class="card"><h3>Réinitialiser</h3><div class="btnrow"><button class="btn dan" id="reset-all">Effacer toutes mes données (favoris, notes, monographies, imports)</button></div></div>`;
   const sb = $("#save-btn"); if (sb) sb.onclick = saveFile; $("#exp-btn").onclick = exportUser;
+  $$("#theme-seg button").forEach(b => b.onclick = () => { USER.theme = b.dataset.theme || ""; applyTheme(); markDirty(); $$("#theme-seg button").forEach(x => x.classList.toggle("on", x === b)); });
   $("#imp-user").onchange = e => e.target.files[0] && importUser(e.target.files[0]);
   $("#imp-json").onchange = e => e.target.files[0] && importPrices(e.target.files[0]);
   $("#imp-csv").onchange = e => e.target.files[0] && importCsv(e.target.files[0]);
   const rp = $("#reset-px"); if (rp) rp.onclick = () => { if (confirm("Revenir à la base de prix intégrée ?")) { USER.priceOverride = null; USER.custom = []; markDirty(); buildIndex(); renderAll(); } };
-  $("#reset-all").onclick = () => { if (confirm("Effacer favoris, notes, monographies modifiées, ordonnance et imports ?")) { USER = { favs: [], notes: {}, mono: {}, rx: [], custom: [], priceOverride: null }; markDirty(); buildIndex(); renderAll(); } };
+  $("#reset-all").onclick = () => { if (confirm("Effacer favoris, notes, monographies modifiées, ordonnance et imports ?")) { USER = { favs: [], notes: {}, mono: {}, rx: [], custom: [], priceOverride: null, recent: [], labs: {}, theme: USER.theme }; $("#tools").innerHTML = ""; delete $("#tools").dataset.built; markDirty(); buildIndex(); renderAll(); } };
 }
 
 /* ===================== UI générale ===================== */
 let toastT;
 function toast(msg) { const t = $("#toast"); t.textContent = msg; t.classList.add("on"); clearTimeout(toastT); toastT = setTimeout(() => t.classList.remove("on"), 2600); }
-function showView(v) { $$(".view").forEach(x => x.classList.toggle("on", x.id === "view-" + v)); $$("nav.tabs button").forEach(b => b.classList.toggle("on", b.dataset.view === v)); $("header.top").style.display = v === "search" ? "" : "none"; if (v === "rx") renderRx(); if (v === "fav") renderFavs(); if (v === "settings") renderSettings(); $("main").scrollTop = 0; }
+function showView(v) { $$(".view").forEach(x => x.classList.toggle("on", x.id === "view-" + v)); $$("nav.tabs button").forEach(b => b.classList.toggle("on", b.dataset.view === v)); $("header.top").style.display = v === "search" ? "" : "none"; if (v === "rx") renderRx(); if (v === "fav") renderFavs(); if (v === "settings") renderSettings(); if (v === "tools") renderTools(); $("main").scrollTop = 0; }
 function renderAll() { renderResults(); renderFavs(); renderRx(); updateBadge(); if ($("#view-settings").classList.contains("on")) renderSettings(); }
 let APP_SHELL = "";
 function boot() {
@@ -783,8 +952,14 @@ function boot() {
   });
   window.onbeforeunload = () => DIRTY ? "Modifications non enregistrées" : undefined;
   renderAll(); showView("search");
+  try { window.matchMedia("(prefers-color-scheme: dark)").addEventListener("change", applyTheme); } catch (e) {}
   if ("serviceWorker" in navigator && !ANDROID && HOSTED) navigator.serviceWorker.register("sw.js").catch(() => {});
   $("#sh-share").onclick = shareFiche;
+}
+async function shareText(title, txt) {
+  if (ANDROID) { window.PharmisAndroid.share(title, txt); return; }
+  if (navigator.share) { try { await navigator.share({ title, text: txt }); return; } catch (e) { if (e && e.name === "AbortError") return; } }
+  try { await navigator.clipboard.writeText(txt); toast("Copié dans le presse-papiers"); } catch (e) { toast("Partage indisponible"); }
 }
 async function shareFiche() {
   if (!CUR) return; const g = CUR; const m = getMono(g.key) || (monoParts(g.key)[0] || {}).mono || {};
