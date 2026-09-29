@@ -56,6 +56,9 @@ Nouveautés de la version 4
   Belpharma (Baumix, Actimax), Opalia Recordati, Dahlia, XEN, Pediakid, Vitabiotics, Arkopharma,
   Forté Pharma, Juvamine. Fiches générées à partir des ingrédients (alertes âge, miel,
   lierre, échinacée, millepertuis, zinc/fer, laxatifs stimulants…) et sources vendeurs.
+- Version 9 : gamme Benestar (Energiben, Tussiben, Allergiben, Migraben, Anxiben, Dorben,
+  Arthroben…) et « Données > Mes compléments » : ajoutez vous-même un produit absent (nom,
+  marque, ingrédients, prix constaté) ; les alertes des ingrédients connus s'appliquent.
 - Le fichier PHARMIS.apk n'a pas été régénéré : il contient encore la version précédente.
 
 Rappel : loi 73-55 art. 40 — information réservée aux professionnels de santé ; ne pas
