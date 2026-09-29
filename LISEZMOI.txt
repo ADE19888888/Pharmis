@@ -28,6 +28,13 @@ Mettre à jour l'application (nouveaux prix, nouvelles monographies) :
 Les prix peuvent aussi être mis à jour depuis l'application (Données > Mettre à jour les
 prix) avec le fichier js/latest.json de https://github.com/ballouchi/medoc.
 
+Cloudflare Pages : le dossier « pharmis-cloudflare » contient tout le site prêt à déployer
+(index.html, sw.js, manifest, icônes, _headers, robots.txt). Sur dash.cloudflare.com >
+Workers & Pages > Create > Pages > Upload assets : glisser le dossier, puis Deploy.
+Les fichiers _headers et robots.txt empêchent l'indexation par les moteurs de recherche
+(information réservée aux professionnels de santé) et forcent la vérification des mises à jour.
+Après une mise à jour de index.html, recopier les fichiers dans ce dossier avant de redéployer.
+
 Alternative sans GitHub : https://app.netlify.com/drop (compte gratuit) — glisser le
 dossier entier, une adresse est créée immédiatement.
 
