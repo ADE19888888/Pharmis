@@ -49,6 +49,8 @@ Nouveautés de la version 4
   et Plantexil, Humer Phyto toux grasse, Biogrip rhume et grippe (sirop, comprimés),
   Pediakid Immuno-Fort. Composition, précautions (miel < 1 an, lierre < 2 ans, échinacée
   < 12 ans, zinc), sans prix (prix libres).
+- Gamme Humer Phyto (version 7) : toux grasse, rhume/toux sèche, grippe, gastro, colique,
+  dentition, appétit croissance, oméga 3.
 - Le fichier PHARMIS.apk n'a pas été régénéré : il contient encore la version précédente.
 
 Rappel : loi 73-55 art. 40 — information réservée aux professionnels de santé ; ne pas
